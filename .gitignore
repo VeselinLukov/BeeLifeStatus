@@ -6,6 +6,7 @@ __pycache__/
 venv/
 db.sqlite3
 .idea/
+.idea
 .pytest_cache/
 .coverage
 htmlcov/
