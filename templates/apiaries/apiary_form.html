@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{ apiary.name }}
+    <form method="post">
+        {{ form }}
+        {% csrf_token %}
+        <button>Submit</button>
+        <a class="button" href="{% url 'apiaries:home-page' %}">Cancel</a>
+    </form>
+</body>
+</html>

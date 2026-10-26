@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete Apiary</title>
+</head>
+<body>
+    <div>
+        <h1>Delete Apiary</h1>
+        <p>Are you sure you want to delete the apiary "{{ object }}"</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm Delete</button>
+            <a href="{% url 'apiaries:home-page' %}">Cancel</a>
+        </form>
+    </div>
+
+</body>
+</html>

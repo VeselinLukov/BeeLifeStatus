@@ -19,6 +19,14 @@ class ApiaryBaseForm(forms.ModelForm):
             'image_url': 'Image URL'
         }
 
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Insert name'}),
+            'location': forms.TextInput(attrs={'placeholder': 'Insert location'}),
+            'number_of_hives': forms.TextInput(attrs={'placeholder': 'Insert number of hives'}),
+            'apiary_description': forms.TextInput(attrs={'placeholder': 'Add description'}),
+            'image_url': forms.TextInput(attrs={'placeholder': 'Insert image URL (optional)'})
+        }
+
         def clean_location(self) -> str:
             location = self.cleaned_data["location"]
 
@@ -35,10 +43,4 @@ class ApiaryBaseForm(forms.ModelForm):
 
             return number_of_hives
 
-        def clean_image_url(self) -> URLField:
-            image_url = self.cleaned_data["image_url"]
 
-            if not image_url:
-                raise ValidationError("URL is not valid!")
-
-            return image_url

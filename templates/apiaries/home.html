@@ -8,11 +8,17 @@
     </section>
 
     <section id="apiariesPage">
+        <h2>Total added apiaries: {{ total_apiaries_count }}</h2>
         {% for apiary in apiaries %}
-            <p>Name: {{ apiary.name }}</p>
+            <article class="apiary">
+            <h3>{{ apiary.name }}</h3>
+            
             <p>Location: {{ apiary.location }}</p>
             <p>Number of hives: {{ apiary.number_of_hives }}</p>
             <p>Description: {{ apiary.apiary_description }}</p>
+            
+            </article>
+            <hr>
         {% empty %}
             <h2>No apiaries added.</h2>
         {% endfor %}
