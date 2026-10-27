@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete Beehive</title>
+</head>
+<body>
+    <div>
+        <h1>Delete Beehive</h1>
+        <p>Are you sure you want to delete the beehive "{{ beehive.beehive_number }}"</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm Delete</button>
+            <a href="{% url 'beehives:beehives-list' %}">Cancel</a>
+        </form>
+    </div>
+
+</body>
+</html>

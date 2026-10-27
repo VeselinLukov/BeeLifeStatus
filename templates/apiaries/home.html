@@ -16,6 +16,8 @@
             <p>Location: {{ apiary.location }}</p>
             <p>Number of hives: {{ apiary.number_of_hives }}</p>
             <p>Description: {{ apiary.apiary_description }}</p>
+            <a href="{% url 'apiaries:apiary-update' apiary.pk %}">Edit</a>
+            <a href="{% url 'apiaries:apiary-delete' apiary.pk %}">Delete</a>
             
             </article>
             <hr>

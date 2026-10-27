@@ -26,9 +26,9 @@ class ApiaryCreateView(CreateView):
     form_class = ApiaryBaseForm
     success_url = reverse_lazy('apiaries:home-page')
 
-    def valid_form(self, form):
+    def form_valid(self, form):
         messages.success(self.request, "Apiary successfully created.")
-        return super().valid_form(form)
+        return super().form_valid(form)
 
 
 class ApiaryUpdateView(UpdateView):

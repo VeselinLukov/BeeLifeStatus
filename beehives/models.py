@@ -18,7 +18,9 @@ class Beehive(models.Model):
         ROGER_DELON = 'RD', 'Roger-Delon'
         EPS = 'PS', 'Expanded polystyrene'
 
-    beehive_number = models.PositiveIntegerField()
+    beehive_number = models.PositiveIntegerField(
+        unique=True
+    )
     beehive_type = models.CharField(
         max_length=2,
         choices=BeehiveTypeChoice.choices
@@ -30,7 +32,10 @@ class Beehive(models.Model):
         max_length=2,
         choices=ColonyStatus.choices
     )
-    beehive_description = models.TextField()
+    beehive_description = models.TextField(
+        blank=True,
+        null=True
+    )
     apiary = models.ForeignKey(
         to=Apiary,
         on_delete=models.CASCADE,

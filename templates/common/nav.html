@@ -1,10 +1,11 @@
 {% load static %}
 <header>
     <nav>
-        <a href="">Home</a>
+        <a href="{% url 'apiaries:home-page' %}">Home</a>
         <ul>
             <a href="{% url 'apiaries:apiary-create' %}">Create Apiary</a>
-            <li>Create Beehive</li>
+            <a href="{% url 'beehives:beehive-create' %}">Create Beehive</a>
+            <a href="{% url 'beehives:beehives-list' %}">Beehives list</a>
             <li>Log Inspection</li>
             <li>New Task</li>
         </ul>

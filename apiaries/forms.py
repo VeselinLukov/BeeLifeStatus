@@ -1,6 +1,5 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from django.db.models.fields import URLField
 
 from apiaries.models import Apiary
 
@@ -22,25 +21,25 @@ class ApiaryBaseForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Insert name'}),
             'location': forms.TextInput(attrs={'placeholder': 'Insert location'}),
-            'number_of_hives': forms.TextInput(attrs={'placeholder': 'Insert number of hives'}),
+            'number_of_hives': forms.NumberInput(attrs={'placeholder': 'Insert number of hives'}),
             'apiary_description': forms.TextInput(attrs={'placeholder': 'Add description'}),
-            'image_url': forms.TextInput(attrs={'placeholder': 'Insert image URL (optional)'})
+            'image_url': forms.URLInput(attrs={'placeholder': 'Insert image URL (optional)'})
         }
 
-        def clean_location(self) -> str:
-            location = self.cleaned_data["location"]
+    def clean_location(self) -> str:
+        location = self.cleaned_data["location"]
 
-            if not location.isalpha():
-                raise ValidationError("Location should contains only letters!")
+        if not location.replace(' ', '').isalpha():
+            raise ValidationError("Location should contains only letters!")
 
-            return location
+        return location
 
-        def clean_number_of_hives(self) -> int:
-            number_of_hives = self.cleaned_data["number_of_hives"]
+    def clean_number_of_hives(self) -> int:
+        number_of_hives = self.cleaned_data["number_of_hives"]
 
-            if not number_of_hives.isdigit():
-                raise ValidationError("Hives should be a number!")
+        if number_of_hives < 0:
+            raise ValidationError("Hives should be a positive number!")
 
-            return number_of_hives
+        return number_of_hives
 
 

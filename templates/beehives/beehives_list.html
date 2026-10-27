@@ -1,0 +1,30 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <section id="homePage">
+        <div>
+            <h1>BeeLifeStatus beehives</h1>
+        </div>
+    </section>
+
+    <section id="beehivesPage">
+        {% for beehive in beehives %}
+            <article class="beehive">
+            <h3>{{ beehive.beehive_type}}</h3>
+            
+            <p>Beehive number: {{ beehive.beehive_number }}</p>
+            <p>Beehive type: {{ beehive.beehive_type }}</p>
+            <p>Installation date: {{ beehive.installation_date }}</p>
+            <p>Current status: {{ beehive.current_status }}</p>
+            <p>Description: {{ beehive.beehive_description }}</p>
+            <a href="{% url 'beehives:beehive-update' beehive.pk %}">Edit</a>
+            <a href="{% url 'beehives:beehive-delete' beehive.pk %}">Delete</a>
+            
+            </article>
+            <hr>
+        {% empty %}
+            <h2>No beehives added.</h2>
+        {% endfor %}
+    </section>
+
+{% endblock %}

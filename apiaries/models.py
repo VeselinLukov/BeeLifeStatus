@@ -8,7 +8,7 @@ class Apiary(models.Model):
         validators=[
             MinLengthValidator(2),
             RegexValidator(
-                regex=r'[A-Za-z0-9]+',
+                regex=r'^[A-Za-z0-9]+$',
                 message="Ensure the name contains only letters and numbers!"
             )
         ]
