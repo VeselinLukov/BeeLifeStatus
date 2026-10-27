@@ -49,7 +49,7 @@ The application supports the management of apiaries, beehives, inspections, insp
 Project Structure
 
 The project is organized into the following directories:
-
+```text
 BeeLifeStatus/
 ├── apiaries/       # Apiary management
 ├── beehives/       # Beehive management
@@ -61,7 +61,7 @@ BeeLifeStatus/
 ├── templates/      # HTML templates
 ├── manage.py       # Django management utility
 └── requirements.txt
-
+```
 
 Requirements
 Before running the application, make sure you have:
