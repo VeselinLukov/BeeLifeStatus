@@ -1,13 +1,52 @@
 {% load static %}
 <header>
     <nav>
-        <a href="{% url 'apiaries:home-page' %}">Home</a>
-        <ul>
-            <a href="{% url 'apiaries:apiary-create' %}">Create Apiary</a>
-            <a href="{% url 'beehives:beehive-create' %}">Create Beehive</a>
-            <a href="{% url 'beehives:beehives-list' %}">Beehives list</a>
-            <li>Log Inspection</li>
-            <li>New Task</li>
+        <a href="{% url 'apiaries:home-page' %}" class="flex items-center gap-2 text-2xl font-bold tracking-wide
+                  text-amber-400 transition hover:text-amber-300">
+            Home
+        </a>
+        <ul class="flex items-center gap-2">
+            <li>
+                <a href="{% url 'apiaries:apiary-create' %}" class="rounded-lg px-4 py-2 text-sm font-medium
+                          transition duration-200 hover:bg-emerald-700
+                          hover:text-amber-300">
+                    Create Apiary
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'beehives:beehive-create' %}" class="rounded-lg px-4 py-2 text-sm font-medium
+                          transition duration-200 hover:bg-emerald-700
+                          hover:text-amber-300">
+                    Create Beehive
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'beehives:beehives-list' %}" class="rounded-lg px-4 py-2 text-sm font-medium
+                          transition duration-200 hover:bg-emerald-700
+                          hover:text-amber-300">
+                    Beehives list
+                </a>
+            </li>
+
+            <li>
+                <a href="#"
+                   class="rounded-lg px-4 py-2 text-sm font-medium
+                          transition duration-200 hover:bg-emerald-700
+                          hover:text-amber-300">
+                Log Inspection
+                </a>
+            </li>
+
+            <li>
+                <a href="#"
+                   class="rounded-lg px-4 py-2 text-sm
+                          font-semibold text-emerald-950 transition
+                          hover:bg-amber-300">
+                New Task
+                </a>
+            </li>
+
         </ul>
     </nav>
 </header>

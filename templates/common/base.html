@@ -1,13 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     {% include 'common/head.html' %}
 
-    <body>
-        <div id="body">
+    <body class="min-h-full bg-amber-50 text-gray-800 antialiased">
+        <div id="body" class="flex min-h-screen flex-col">
             {% include 'common/nav.html' %}
 
+            <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
             {% block content %}
             {% endblock %}
+            </main>
         
             {% include 'common/footer.html' %}
         </div>
