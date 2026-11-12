@@ -18,7 +18,7 @@ def home_view(request: HttpRequest) -> HttpResponse:
         'page_title': 'Home',
     }
 
-    return render(request, 'apiaries/../templates/common/home.html', context)
+    return render(request, '../templates/common/home.html', context)
 
 
 class ApiaryCreateView(CreateView):
