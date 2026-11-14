@@ -22,6 +22,6 @@ class InspectionsBaseForm(forms.ModelForm):
                 'placeholder': 'Add information about food stores in the beehive',
             }),
             'inspection_notes': forms.Textarea(attrs={
-                'placeholder': 'Add notes during the inspection',
+                'placeholder': 'Add notes (if any) during the inspection',
             }),
         }

@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView
 
-from apiaries.forms import ApiaryBaseForm
+from apiaries.forms import ApiaryBaseForm, ApiaryCreateForm, ApiaryUpdateForm
 from apiaries.models import Apiary
 
 
@@ -23,7 +23,7 @@ def home_view(request: HttpRequest) -> HttpResponse:
 
 class ApiaryCreateView(CreateView):
     model = Apiary
-    form_class = ApiaryBaseForm
+    form_class = ApiaryCreateForm
     success_url = reverse_lazy('apiaries:home-page')
 
     def form_valid(self, form):
@@ -33,7 +33,7 @@ class ApiaryCreateView(CreateView):
 
 class ApiaryUpdateView(UpdateView):
     model = Apiary
-    form_class = ApiaryBaseForm
+    form_class = ApiaryUpdateForm
     success_url = reverse_lazy('apiaries:home-page')
 
 

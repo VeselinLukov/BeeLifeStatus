@@ -5,8 +5,9 @@ from django.db import models
 class Apiary(models.Model):
     name = models.CharField(
         max_length=50,
+        unique=True,
         validators=[
-            MinLengthValidator(2),
+            MinLengthValidator(5),
             RegexValidator(
                 regex=r'^[A-Za-z0-9]+$',
                 message="Ensure the name contains only letters and numbers!"
