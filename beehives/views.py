@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView
 
-from beehives.forms import BeehiveBaseForm
+from beehives.forms import BeehiveCreateForm, BeehiveUpdateForm
 from beehives.models import Beehive
 
 
@@ -20,7 +20,7 @@ def beehives_list_view(request: HttpRequest) -> HttpResponse:
 
 class BeehiveCreateView(CreateView):
     model = Beehive
-    form_class = BeehiveBaseForm
+    form_class = BeehiveCreateForm
     success_url = reverse_lazy('beehives:beehives-list')
 
     def form_valid(self, form):
@@ -30,7 +30,7 @@ class BeehiveCreateView(CreateView):
 
 class BeehiveUpdateView(UpdateView):
     model = Beehive
-    form_class = BeehiveBaseForm
+    form_class = BeehiveUpdateForm
     success_url = reverse_lazy('beehives:beehives-list')
 
 

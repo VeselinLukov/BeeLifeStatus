@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{ inspection.beehive }}
+    <form method="post">
+        {{ form }}
+        {% csrf_token %}
+        <button>Submit</button>
+        <a href="{% url 'inspections:inspections-list' %}">Cancel</a>
+    </form>
+</body>
+</html>

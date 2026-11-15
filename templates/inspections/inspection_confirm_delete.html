@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete Inspection</title>
+</head>
+<body>
+    <div>
+        <h1>Delete Inspection</h1>
+        <p>Are you sure you want to delete the inspection from
+            {{ inspection.inspection_date }} for Beehive number {{ inspection.beehive.beehive_number }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm Delete</button>
+            <a href="{% url 'inspections:inspections-list' %}">Cancel</a>
+        </form>
+    </div>
+
+</body>
+</html>

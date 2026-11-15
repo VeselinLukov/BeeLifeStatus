@@ -28,7 +28,11 @@ class Inspection(models.Model):
         max_length=2,
         choices=QueenStatus.choices
     )
-    food_stores = models.TextField()
+    food_stores = models.TextField(
+        error_messages={
+            'required': 'You should add information about food stores!',
+        }
+    )
     inspection_notes = models.TextField(
         blank=True,
         null=True
@@ -38,4 +42,3 @@ class Inspection(models.Model):
         on_delete=models.CASCADE,
         related_name="inspections"
     )
-

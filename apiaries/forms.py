@@ -62,12 +62,12 @@ class ApiaryUpdateForm(ApiaryBaseForm):
             'name': forms.TextInput(
                 attrs={
                     'placeholder': 'Insert name',
-                    'readonly': 'readonly',
+                    'disabled': 'disabled',
                 }),
             'location': forms.TextInput(attrs={'placeholder': 'Insert location'}),
             'number_of_hives': forms.NumberInput(attrs={'placeholder': 'Insert number of hives'}),
             'apiary_description': forms.TextInput(attrs={'placeholder': 'Add description'}),
-            'image_url': forms.URLInput(attrs={'placeholder': 'Insert image URL (optional)'})
+            'image_url': forms.URLInput(attrs={'placeholder': 'Insert image URL (optional)'}),
         }
 
         help_texts = {
@@ -76,5 +76,5 @@ class ApiaryUpdateForm(ApiaryBaseForm):
             'number_of_hives': 'Add how many beehives are (if any). Default is 0.',
             'apiary_description': 'Optional. Example description: type of honey, area'
                                   'specifications, etc. ',
-            'image_url': 'Optional. Add direct URL to your apiary photo.'
+            'image_url': 'Optional. Add direct URL to your apiary photo.',
         }

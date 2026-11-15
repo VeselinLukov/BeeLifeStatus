@@ -2,3 +2,5 @@
 
 @source "../templates";
 @source "../apiaries/templates";
+
+@tailwind utilities;
