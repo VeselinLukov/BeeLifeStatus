@@ -20,6 +20,9 @@ class Inspection(models.Model):
     inspection_date = models.DateTimeField(
         auto_now_add=True
     )
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
     colony_health = models.CharField(
         max_length=2,
         choices=HealthStatus.choices

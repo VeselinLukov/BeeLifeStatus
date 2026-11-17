@@ -9,7 +9,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('beehives', '0001_initial'),
-        ('tags', '0001_initial'),
     ]
 
     operations = [

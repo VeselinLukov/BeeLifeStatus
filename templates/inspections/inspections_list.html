@@ -23,15 +23,17 @@
                                     p-6">
                             <div class="flex items-start justify-between gap-3">
                                 <div>
-{#                                  <h1>Beehive Number {{ inspection.beehive.beehive_number}}
-                                    in {{ inspection.beehive.apiary }} apiary</h1>}
+                                     <h1 class="text-xl font-bold text-emerald-950">
+                                         Beehive Number {{ inspection.beehive.beehive_number}}
+                                    in {{ inspection.beehive.apiary }} apiary
+                                     </h1>
             
-                                    <p class="text-xs font-bold uppercase
+                                    <p class="mt-4 text-xs font-bold uppercase
                                                     tracking-widest text-emerald-700">
                                         Inspection date: {{ inspection.inspection_date|date:"d M Y" }}
                                     </p>
                                     
-                                    <p class="mt-2 text-xl font-bold text-emerald-950">
+                                    <p class="mt-4 tracking-normal">
                                         Colony health: {{ inspection.get_colony_health_display }}
                                     </p>
                                 </div>

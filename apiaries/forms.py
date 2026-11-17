@@ -10,6 +10,11 @@ class ApiaryBaseForm(forms.ModelForm):
         fields = ['name', 'location', 'number_of_hives', 'apiary_description',
                   'image_url']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['name'].disabled = True
+
         labels = {
             'name': "Apiary's name",
             'location': "Apiary's location",
@@ -22,7 +27,7 @@ class ApiaryBaseForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'placeholder': 'Insert name'}),
             'location': forms.TextInput(attrs={'placeholder': 'Insert location'}),
             'number_of_hives': forms.NumberInput(attrs={'placeholder': 'Insert number of hives'}),
-            'apiary_description': forms.TextInput(attrs={'placeholder': 'Add description'}),
+            'apiary_description': forms.Textarea(attrs={'placeholder': 'Add description'}),
             'image_url': forms.URLInput(attrs={'placeholder': 'Insert image URL (optional)'})
         }
 
@@ -46,12 +51,12 @@ class ApiaryBaseForm(forms.ModelForm):
 class ApiaryCreateForm(ApiaryBaseForm):
     class Meta(ApiaryBaseForm.Meta):
         help_texts = {
-            'name': "Minimum 5 characters (letters and numbers). Name should be unique.",
-            'location': "Add area's name, where the apiary is created.",
-            'number_of_hives': 'Add how many beehives are (if any). Default is 0.',
+            'name': "Minimum 5 characters (letters and numbers). Name should be unique",
+            'location': "Add area's name, where the apiary is created",
+            'number_of_hives': 'Add how many beehives are (if any). Default is 0',
             'apiary_description': 'Optional. Example description: type of honey, area'
-                                  'specifications, etc. ',
-            'image_url': 'Optional. Add direct URL to your apiary photo.'
+                                  'specifications, etc.',
+            'image_url': 'Optional. Add direct URL to your apiary photo'
         }
 
 
@@ -71,10 +76,10 @@ class ApiaryUpdateForm(ApiaryBaseForm):
         }
 
         help_texts = {
-            'name': "You can't edit your apiary name.",
-            'location': "Add area's name, where the apiary is created.",
-            'number_of_hives': 'Add how many beehives are (if any). Default is 0.',
+            'name': "You can't edit your apiary name",
+            'location': "Add area's name, where the apiary is created",
+            'number_of_hives': 'Add how many beehives are (if any). Default is 0',
             'apiary_description': 'Optional. Example description: type of honey, area'
-                                  'specifications, etc. ',
-            'image_url': 'Optional. Add direct URL to your apiary photo.',
+                                  'specifications, etc.',
+            'image_url': 'Optional. Add direct URL to your apiary photo',
         }

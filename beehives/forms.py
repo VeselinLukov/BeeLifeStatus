@@ -8,6 +8,11 @@ class BeehiveBaseForm(forms.ModelForm):
         model = Beehive
         exclude = ['installation_date']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['beehive_number'].disabled = True
+
         labels = {
             'beehive_number': "Beehive number",
             'beehive_type': "Beehive type",
@@ -37,11 +42,11 @@ class BeehiveBaseForm(forms.ModelForm):
 class BeehiveCreateForm(BeehiveBaseForm):
     class Meta(BeehiveBaseForm.Meta):
         help_texts = {
-            'beehive_number': "Number should be unique. ",
-            'beehive_type': "Select your type of beehive structure.",
-            'current_status': "Select your current status of the colony.",
-            'beehive_description': "Optional. Add any description.",
-            'apiary': "Choose to which apiary belongs the beehive.",
+            'beehive_number': "Number should be unique",
+            'beehive_type': "Select your type of beehive structure",
+            'current_status': "Select your current status of the colony",
+            'beehive_description': "Optional. Add any description",
+            'apiary': "Choose to which apiary belongs the beehive",
         }
 
 
@@ -62,9 +67,9 @@ class BeehiveUpdateForm(BeehiveBaseForm):
         }
 
         help_texts = {
-            'beehive_number': "You can't change your beehive number. ",
-            'beehive_type': "Select your type of beehive structure.",
-            'current_status': "Select your current status of the colony.",
-            'beehive_description': "Optional. Add any description.",
-            'apiary': "Choose to which apiary belongs the beehive.",
+            'beehive_number': "You can't change your beehive number",
+            'beehive_type': "Select your type of beehive structure",
+            'current_status': "Select your current status of the colony",
+            'beehive_description': "Optional. Add any description",
+            'apiary': "Choose to which apiary belongs the beehive",
         }

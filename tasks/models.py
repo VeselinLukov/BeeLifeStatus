@@ -1,7 +1,7 @@
 from django.db import models
 
 from beehives.models import Beehive
-from tags.models import Tag
+from inspections.models import Inspection
 
 
 class Task(models.Model):
@@ -10,20 +10,19 @@ class Task(models.Model):
         DONE = 'DN', 'Done'
 
     task_title = models.CharField(
-        max_length=100
+        max_length=100,
+        unique=True,
     )
     task_description = models.TextField()
-    deadline = models.DateTimeField()
+    deadline = models.DateTimeField(
+
+    )
     task_status = models.CharField(
         max_length=2,
         choices=TaskStatus.choices
     )
-    beehives = models.ManyToManyField(
-        to=Beehive,
-        verbose_name="Beehives list"
-    )
-    tags = models.ManyToManyField(
-        to=Tag,
-        verbose_name="Tags list"
+    inspection = models.ManyToManyField(
+        to=Inspection,
+        verbose_name="Inspections list"
     )
 

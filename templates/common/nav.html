@@ -6,6 +6,7 @@
             Home
         </a>
         <ul class="flex items-center gap-2">
+
             <li>
                 <a href="{% url 'apiaries:apiary-create' %}" class="rounded-lg px-4 py-2 text-sm font-medium
                           transition duration-200 hover:bg-emerald-700
@@ -18,9 +19,10 @@
                 <a href="{% url 'beehives:beehive-create' %}" class="rounded-lg px-4 py-2 text-sm font-medium
                           transition duration-200 hover:bg-emerald-700
                           hover:text-amber-300">
-                    Create Beehive
+                    Add Beehive
                 </a>
             </li>
+
             <li>
                 <a href="{% url 'beehives:beehives-list' %}" class="rounded-lg px-4 py-2 text-sm font-medium
                           transition duration-200 hover:bg-emerald-700
@@ -28,6 +30,7 @@
                     Beehives List
                 </a>
             </li>
+
             <li>
                 <a href="{% url 'inspections:inspection-create' %}" class="rounded-lg px-4 py-2 text-sm font-medium
                           transition duration-200 hover:bg-emerald-700
@@ -35,21 +38,31 @@
                     Create Inspection
                 </a>
             </li>
+
             <li>
                 <a href="{% url 'inspections:inspections-list' %}"
                    class="rounded-lg px-4 py-2 text-sm font-medium
                           transition duration-200 hover:bg-emerald-700
                           hover:text-amber-300">
-                Inspections List
+                    Inspections List
                 </a>
             </li>
 
             <li>
-                <a href="#"
+                <a href="{% url 'tasks:task-create' %}"
                    class="rounded-lg px-4 py-2 text-sm font-medium
                           transition duration-200 hover:bg-emerald-700
                           hover:text-amber-300">
                 New Task
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'tasks:tasks-list' %}"
+                   class="rounded-lg px-4 py-2 text-sm font-medium
+                          transition duration-200 hover:bg-emerald-700
+                          hover:text-amber-300">
+                Tasks List
                 </a>
             </li>
 

@@ -2,16 +2,21 @@
 
 {% block content %}
     <section id="homePage">
-        <div>
-            <h1>BeeLifeStatus apiaries</h1>
-        </div>
+        <span class="mb-1 inline-block rounded-full bg-amber-100 px-4 py-1
+                         text-2xl font-semibold text-amber-800">
+            <h1>BeeLifeStatus Apiaries</h1>
+        </span>
     </section>
 
-    <section id="apiariesPage">
-        <h2>Total added apiaries: {{ total_apiaries_count }}</h2>
+    <section class="mt-4">
+        <span class="mb-3 inline-block rounded-full px-6 py-5
+                    text-xl font-semibold">
+            <h2>Total added apiaries: {{ total_apiaries_count }}</h2>
+        </span>
+
         {% for apiary in apiaries %}
             <article class="apiary">
-            <h3>{{ apiary.name }}</h3>
+            <h3>Apiary name: {{ apiary.name }}</h3>
             
             <p>Location: {{ apiary.location }}</p>
             <p>Number of hives: {{ apiary.number_of_hives }}</p>

@@ -37,7 +37,6 @@ PROJECT_APPS = [
     'apiaries',
     'beehives',
     'inspections',
-    'tags',
     'tasks',
 ]
 

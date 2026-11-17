@@ -23,6 +23,5 @@ urlpatterns = [
     path('', include('apiaries.urls')),
     path('beehives/', include('beehives.urls')),
     path('inspections/', include('inspections.urls')),
-    path('tags/', include('tags.urls')),
     path('tasks/', include('tasks.urls')),
 ]

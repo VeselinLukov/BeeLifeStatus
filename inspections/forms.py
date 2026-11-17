@@ -36,8 +36,8 @@ class InspectionCreateForm(InspectionsBaseForm):
             'colony_health': "Choose the colony health status",
             'queen_status': "Choose the queen status",
             'food_stores': "Add information about available food stores in the beehive",
-            'inspection_notes': "Add notes (if any) during the inspection.",
-            'beehive': "Choose the beehive to which inspection should be recorded.",
+            'inspection_notes': "Add notes (if any) during the inspection",
+            'beehive': "Choose the beehive to which inspection should be recorded",
         }
 
 
@@ -60,6 +60,6 @@ class InspectionUpdateForm(InspectionsBaseForm):
             'colony_health': "Choose the colony health status",
             'queen_status': "Choose the queen status",
             'food_stores': "Add information about available food stores in the beehive",
-            'inspection_notes': "Add notes (if any) during the inspection.",
-            'beehive': "Choose the beehive to which inspection should be recorded.",
+            'inspection_notes': "Add notes (if any) during the inspection",
+            'beehive': "Choose the beehive to which inspection should be recorded",
         }
