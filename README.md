@@ -1,9 +1,9 @@
 # BeeLifeStatus
 ## Overview
 
-BeeLifeStatus is a Django-based web application designed to manage apiaries, beehives, inspections, and tasks related to the health of an apiary.
+BeeLifeStatus is a Django-based web application designed to manage apiaries, beehives, inspections, and tasks related to the inspections of a apiary.
 
-The project provides a way to organize beekeeping activities by managing apiaries and their beehives, recording inspections, assigning tags to inspections, and maintaining task lists associated with each tag.
+The project provides a way to organize beekeeping activities by managing apiaries and their beehives, recording inspections and maintaining task lists associated with each inspection.
 
 ## Features
 
@@ -21,11 +21,6 @@ The project provides a way to organize beekeeping activities by managing apiarie
 - Create inspections.
 - Edit existing inspections.
 - Delete inspections.
-
-### Inspection Tag Management
-- Create tags associated with an inspection.
-- Edit existing tags.
-- Delete tags.
 
 ### Task List Management
 - Create task lists associated with each tag.
@@ -45,7 +40,7 @@ The installation instructions will be completed once the project structure and d
 
 BeeLifeStatus is intended to help beekeepers organize apiaries and beehives, manage inspections, and keep track of tasks related to apiary health.
 
-The application supports the management of apiaries, beehives, inspections, inspection tags, and their associated task lists.
+The application supports the management of apiaries, beehives, inspections and their associated task lists.
 
 ## Project Structure
 
@@ -57,7 +52,6 @@ BeeLifeStatus/
 ├── beelifestatus/  # Main Django project configuration
 ├── inspections/    # Inspection management
 ├── static/         # Static assets
-├── tags/           # Inspection tag management
 ├── tasks/          # Task management
 ├── templates/      # HTML templates
 ├── manage.py       # Django management utility
@@ -133,7 +127,7 @@ Django migrations are used to apply database schema changes.
 
 ## Usage
 
-Use the application to manage apiaries, beehives, inspections, inspection tags, and task lists associated with those tags.
+Use the application to manage apiaries, beehives, inspections and task lists associated with those inspections.
 The available operations include creating, editing, and deleting these records.
 
 ## Academic Project
